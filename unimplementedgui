@@ -1,0 +1,211 @@
+//unimplemented buttons
+
+import tkinter as tk
+import tkinter.font as tkFont
+
+class MainMenu:
+    def __init__(self, root):
+        #setting title
+        root.title("Main Module")
+        #setting window size
+        width=455
+        height=268
+        screenwidth = root.winfo_screenwidth()
+        screenheight = root.winfo_screenheight()
+        alignstr = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenheight - height) / 2)
+        root.geometry(alignstr)
+        root.resizable(width=False, height=False)
+
+        GLabel_250=tk.Label(root)
+        ft = tkFont.Font(family='Helvetica',size=10)
+        GLabel_250["font"] = ft
+        GLabel_250["fg"] = "#333333"
+        GLabel_250["justify"] = "center"
+        GLabel_250["text"] = "label"
+        GLabel_250.place(x=1250,y=190,width=294,height=30)
+
+        BobButt=tk.Button(root)
+        BobButt["bg"] = "#efefef"
+        ft = tkFont.Font(family='Helvetica',size=10)
+        BobButt["font"] = ft
+        BobButt["fg"] = "#000000"
+        BobButt["justify"] = "center"
+        BobButt["text"] = "Bob"
+        BobButt.place(x=40,y=150,width=187,height=63)
+        BobButt["command"] = self.BobButt_command
+
+        AliceButt=tk.Button(root)
+        AliceButt["bg"] = "#efefef"
+        ft = tkFont.Font(family='Helvetica',size=10)
+        AliceButt["font"] = ft
+        AliceButt["fg"] = "#000000"
+        AliceButt["justify"] = "center"
+        AliceButt["text"] = "Alice"
+        AliceButt.place(x=240,y=150,width=187,height=62)
+        AliceButt["command"] = self.AliceButt_command
+
+        AorB=tk.Label(root)
+        ft = tkFont.Font(family='Helvetica',size=20)
+        AorB["font"] = ft
+        AorB["fg"] = "#333333"
+        AorB["justify"] = "center"
+        AorB["text"] = "Choose Alice or Bob"
+        AorB.place(x=50,y=30,width=359,height=107)
+
+
+    def BobButt_command(self):
+        t = tk.Toplevel()
+        Bobtab = Bob(t)
+
+    def AliceButt_command(self):
+        t = tk.Toplevel()
+        AliceTab = Alice(t)
+
+
+class Alice:
+    def __init__(self, root):
+        #setting title
+        root.title("Alice's View")
+        #setting window size
+        width=350
+        height=287
+        screenwidth = root.winfo_screenwidth()
+        screenheight = root.winfo_screenheight()
+        alignstr = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenheight - height) / 2)
+        root.geometry(alignstr)
+        root.resizable(width=False, height=False)
+
+        SubButtA=tk.Button(root)
+        SubButtA["bg"] = "#efefef"
+        ft = tkFont.Font(family='Helvetica',size=10)
+        SubButtA["font"] = ft
+        SubButtA["fg"] = "#000000"
+        SubButtA["justify"] = "center"
+        SubButtA["text"] = "Submit Bases"
+        SubButtA.place(x=210,y=80,width=100,height=30)
+        SubButtA["command"] = self.SubButtA_command
+
+        BasesInputB=tk.Label(root)
+        ft = tkFont.Font(family='Helvetica',size=10)
+        BasesInputB["font"] = ft
+        BasesInputB["fg"] = "#333333"
+        BasesInputB["justify"] = "center"
+        BasesInputB["text"] = "Enter 5 Bases and 5 Bits"
+        BasesInputB.place(x=50,y=30,width=235,height=30)
+
+        aliceidentifier=tk.Label(root)
+        ft = tkFont.Font(family='Helvetica',size=8)
+        aliceidentifier["font"] = ft
+        aliceidentifier["fg"] = "#333333"
+        aliceidentifier["justify"] = "center"
+        aliceidentifier["text"] = "Alice "
+        aliceidentifier.place(x=0,y=0,width=37,height=30)
+
+        SubButtA2=tk.Button(root)
+        SubButtA2["bg"] = "#efefef"
+        ft = tkFont.Font(family='Helvetica',size=10)
+        SubButtA2["font"] = ft
+        SubButtA2["fg"] = "#000000"
+        SubButtA2["justify"] = "center"
+        SubButtA2["text"] = "Submit Bits"
+        SubButtA2.place(x=210,y=130,width=100,height=30)
+        SubButtA2["command"] = self.SubButtA2_command
+
+        BasesInput=tk.Entry(root)
+        BasesInput["borderwidth"] = "1px"
+        ft = tkFont.Font(family='Helvetica',size=10)
+        BasesInput["font"] = ft
+        BasesInput["fg"] = "#333333"
+        BasesInput["justify"] = "center"
+        BasesInput["text"] = "Series of Xs and Ys"
+        BasesInput.place(x=60,y=130,width=136,height=30)
+
+        BitInput=tk.Entry(root)
+        BitInput["borderwidth"] = "1px"
+        ft = tkFont.Font(family='Helvetica',size=10)
+        BitInput["font"] = ft
+        BitInput["fg"] = "#333333"
+        BitInput["justify"] = "center"
+        BitInput["text"] = "Series of 1s and 0s"
+        BitInput.place(x=60,y=80,width=136,height=30)
+
+        KeyA=tk.Label(root)
+        ft = tkFont.Font(family='Helvetica',size=10)
+        KeyA["font"] = ft
+        KeyA["fg"] = "#333333"
+        KeyA["justify"] = "center"
+        KeyA["text"] = "Alice's Key : ********"
+        KeyA.place(x=60,y=200,width=223,height=30)
+
+    def SubButtA_command(self):
+        print("command")
+
+
+    def SubButtA2_command(self):
+        print("command")
+        
+    
+class Bob:
+    def __init__(self, root):
+        #setting title
+        root.title("Bob's View")
+        #setting window size
+        width=344
+        height=287
+        screenwidth = root.winfo_screenwidth()
+        screenheight = root.winfo_screenheight()
+        alignstr = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenheight - height) / 2)
+        root.geometry(alignstr)
+        root.resizable(width=False, height=False)
+
+        SubButtB=tk.Button(root)
+        SubButtB["bg"] = "#efefef"
+        ft = tkFont.Font(family='Helvetica',size=10)
+        SubButtB["font"] = ft
+        SubButtB["fg"] = "#000000"
+        SubButtB["justify"] = "center"
+        SubButtB["text"] = "Submit Bases"
+        SubButtB.place(x=210,y=100,width=100,height=30)
+        SubButtB["command"] = self.bobbutton
+
+        BitInput=tk.Entry(root, textvariable="Series of Xs and Ys")
+        BitInput["borderwidth"] = "1px"
+        ft = tkFont.Font(family='Helvetica',size=10)
+        BitInput["font"] = ft
+        BitInput["fg"] = "#333333"
+        BitInput["justify"] = "center"
+        BitInput.place(x=60,y=100,width=136,height=30)
+
+        BasesInputB=tk.Label(root)
+        ft = tkFont.Font(family='Helvetica',size=10)
+        BasesInputB["font"] = ft
+        BasesInputB["fg"] = "#333333"
+        BasesInputB["justify"] = "center"
+        BasesInputB["text"] = "Enter 5 Bases"
+        BasesInputB.place(x=50,y=50,width=235,height=30)
+
+        bobidentifier=tk.Label(root)
+        ft = tkFont.Font(family='Helvetica',size=8)
+        bobidentifier["font"] = ft
+        bobidentifier["fg"] = "#333333"
+        bobidentifier["justify"] = "center"
+        bobidentifier["text"] = "Bob"
+        bobidentifier.place(x=0,y=0,width=37,height=30)
+
+        KeyB=tk.Label(root)
+        ft = tkFont.Font(family='Helvetica',size=10)
+        KeyB["font"] = ft
+        KeyB["fg"] = "#333333"
+        KeyB["justify"] = "center"
+        KeyB["text"] = "Bob's Key : ********"
+        KeyB.place(x=60,y=200,width=223,height=30)
+
+
+    def bobbutton(self):
+        BobInput = self.BitInput.get()
+        print(BobInput)
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    mainmenu1 = MainMenu(root)
+    root.mainloop()
